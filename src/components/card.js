@@ -1,5 +1,4 @@
-import { cardTemplate } from "./index.js";
-export function createCard(card, deleteCard, likeCard, openImg) {
+export function createCard(card, cardTemplate, deleteCard, likeCard, openImg) {
   const placesItem = cardTemplate
     .querySelector(".places__item")
     .cloneNode(true);
@@ -14,6 +13,7 @@ export function createCard(card, deleteCard, likeCard, openImg) {
   buttonLike.addEventListener("click", likeCard);
   return placesItem;
 }
+
 export function deleteCard(evt) {
   evt.target.closest(".places__item").remove();
 }
