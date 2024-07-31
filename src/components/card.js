@@ -30,12 +30,12 @@ export function createCard(cardData, showImage, userId, cardId) {
  
   //обработчик клика на кнопку лайка 
   likeButton.addEventListener('click', function() {
-    cardLikeToggle(cardId, likeButton, cardLikes)
+    handleCardLike(cardId, likeButton, cardLikes)
   })
 
   //обработчик кнопки удаления
   deleteButton.addEventListener('click', function(evt) {
-    cardDelete(cardId, deleteButton);
+    (cardId, deleteButton);
   })
  
   cardImage.addEventListener('click', showImage) 
@@ -44,7 +44,7 @@ export function createCard(cardData, showImage, userId, cardId) {
 }
 
   //обработка добавления/удаления лайка 
-  export function cardLikeToggle(cardId, likeButton, cardLikes) {
+  export function handleCardLike(cardId, likeButton, cardLikes) {
     if((likeButton.classList.contains('card__like-button_is-active'))) {
       unlikeCard(cardId)
       .then(data => { 
@@ -63,7 +63,7 @@ export function createCard(cardData, showImage, userId, cardId) {
     }
   }
 
-  export function cardDelete(cardId, deleteButton) {
+  export function deleteCard(cardId, deleteButton) {
     removeCard(cardId)
       .then(res => { 
         deleteButton.closest('.places__item').remove() 

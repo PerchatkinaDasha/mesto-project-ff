@@ -70,7 +70,7 @@ changeAvatarForm.addEventListener('submit', function(evt) {
 // Обработка редактирования профиля
 editButton.addEventListener('click', function() { 
   openPopup(popupEdit); 
-  clearValidation(profileForm, validationConfig); 
+  clearValidation(editNameForm, validationConfig); 
   setValuesEditForm(); 
 });
 
@@ -124,7 +124,6 @@ function showImage(evt) {
 }
 
 // Валидация форм
-const profileForm = document.querySelector('.edit_profile_form'); 
 const placeForm = document.querySelector('.new_place_form'); 
 
 const validationConfig = { 
